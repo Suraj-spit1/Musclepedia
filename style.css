@@ -1,0 +1,490 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+     
+}
+
+body {
+    background: white;
+    color:white;
+    overflow-x: hidden;
+    
+}
+
+.section{
+position: relative; 
+height:80vh;    
+overflow: hidden  ;
+}
+
+.bg-video{
+      position: absolute;
+      width: 100%;
+      object-fit: cover;
+      z-index: 0;      
+}
+
+.overlay {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+z-index: 1;
+
+}
+
+
+nav {
+    position: relative;
+    z-index: 2;
+    display:flex;
+    justify-content: flex-end;
+    padding: 25px 60px;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;  
+    list-style: none;
+    margin-left: auto;
+    
+    border-radius: 20%;
+    margin: 0%;
+    padding: 15px 20px; 
+    font-family:'Orbitron';
+    font-weight: bold;
+    
+
+}
+
+nav a{
+    color:orange;
+    text-decoration:none;
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+.h2 {
+    
+    color:greenyellow;
+    font-size: 35px;
+    margin-right: auto;
+    font-family: 'major mono display';
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:20px;
+    
+}
+
+
+
+.head{
+    margin-left:8%;
+    margin-bottom:0%;
+}
+h1{
+    color: whitesmoke;
+    
+    font-size:400%;
+    font-family:'Black Ops One','sans-serif';
+}
+.subhead {
+    font-size:360%;
+    font-weight: bold;
+    color: yellowgreen;
+    
+    font-family: 'Rubik Microbe', 'Sans-serif';
+    
+}
+
+
+
+
+
+.logo{
+    border-radius: 50%;
+    height: 80px;
+    width:90px;
+    
+}
+
+
+.stats-section{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.stat-card{
+    text-align: center;
+    padding: 20px;
+    min-width: 200px;
+}
+
+.stat-number{
+    font-family: 'Major Mono Display';
+    font-size:25px;
+    color:yellowgreen;
+    font-weight:bold;
+
+}
+.stat-label{
+    color:black;
+    font-size:16px;
+    text-transform: uppercase;
+    margin: 0px;
+    letter-spacing: 1px;
+    font-family:'Orbitron' ;
+
+}
+.section-3{
+    display:flex;
+    justify-content: space-evenly;
+    background-color: black;
+    height: 460px;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.ff {
+    color:yellowgreen;
+}
+.fh{
+    color:yellowgreen;
+}
+
+
+.below{
+    position:absolute;
+    top: 652px;
+}
+
+
+.cover-img{
+height:360px;
+width: 250px;
+box-shadow: 0 10px 36px yellowgreen;
+z-index:0;
+}
+
+.div_c{
+    position:relative;
+    transition: transform 0.3s ease, box-shadow 0,3s ease;
+    cursor: pointer;
+}
+
+.div_c:hover{
+transform: scale(1.06);
+}
+
+
+.overlay-text{
+color:whitesmoke;
+font-family: 'Orbitron';
+position: absolute;
+z-index: 2;
+margin:0;
+top:320px;
+left:10px;
+font-size:30px;
+
+}
+
+
+.section-4 {
+    background: black;
+    overflow: auto;
+    
+}
+.sK {
+   display: flex;  
+align-items: center; 
+  gap: 20px;             
+  max-width: 1000px;
+  min-height: 300px;
+    
+}
+.SK_img{
+    height: 260px;
+    width:500px;
+    border-radius: 0%;
+    margin-right: 0%;
+
+   
+    
+}
+.para{
+    margin-left:20%;
+    color:lightgray;
+    font-family: Schoolbell;
+    font-weight:bold;
+    font-size: 18px;
+}
+.section-5 {
+    background: yellowgreen;
+    padding: 60px 40px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 🔥 The new outer wrapper that aligns Title Left / Form Right */
+.registration-flex-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1100px;
+    gap: 50px;
+}
+
+.Register1 {
+    color: black;
+    font-family: 'Rubik Microbe', sans-serif;
+    font-size: 45px;
+    font-weight: bold;
+    flex: 1;
+    line-height: 1.2;
+}
+
+/* ⚡ Compact Card layout */
+.form-container {
+  background-color: black;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  padding: 24px;
+  width: 100%;
+  max-width: 620px; 
+  height: auto; 
+}
+
+h2 {
+  text-align: center;
+  color: yellowgreen;
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+}
+
+.section-title {
+  color: yellowgreen;
+  font-size: 0.95rem;
+  margin: 15px 0 10px 0;
+  border-bottom: 1px solid #333;
+  padding-bottom: 5px;
+}
+
+/* Form layout structures */
+.form-group {
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Places the 3 gym stats cleanly in one row to save vertical space */
+.form-row-three {
+  display: flex;
+  gap: 10px;
+}
+
+
+
+label {
+  font-size: 1rem;
+  color: #bbb;
+  margin-bottom: 4px;
+  font-weight: 800;
+}
+
+input {
+  padding: 8px 12px;
+  background-color: #111;
+  border: 1px solid #333;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #fff;
+  transition: border-color 0.2s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: yellowgreen;
+}
+
+/* Submit Button styling */
+.register-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: yellowgreen;
+  border: none;
+  border-radius: 4px;
+  color: black;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: transform 0.1s ease, background-color 0.2s ease;
+}
+
+.register-btn:hover {
+  background-color: #88b025;
+  transform: translateY(-1px);
+}
+
+.sec_img{
+    height: 200px;
+    width:140px;
+    border: 5px solid black;
+    border-radius: 30%;
+}
+
+
+
+
+
+
+/* Core Footer Box Setup */
+.main-footer {
+    background-color: #17181c; /* Sleek dark off-black background */
+    color: #ffffff;
+    padding: 60px 20px 30px 20px;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Centered Top Logo Section Styling */
+.footer-logo-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 1px solid #2e3035;
+    padding-bottom: 40px;
+}
+
+.footer-logo {
+    height: 120px; /* Adjust based on your logo size preference */
+    width: auto;
+    margin-bottom: 15px;
+}
+
+.footer-brand-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: 2px;
+    margin: 0;
+    color: #ffffff;
+}
+
+.footer-brand-title .accent-text {
+    color: #9acd32; /* Yellowgreen styling color match */
+}
+
+/* Flexbox Uniform 4-Column Row Layout Grid */
+.footer-columns-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Keeps mobile layout view responsive */
+    gap: 30px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 220px; /* Prevents columns from compressing tight on smaller sizes */
+}
+
+/* Structural Header Element Styling */
+.footer-col h4 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.footer-col p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #a0a5b0;
+    margin: 0;
+}
+
+/* List Items Cleanup Rules */
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    color: #a0a5b0;
+}
+
+.footer-col a {
+    color: #a0a5b0;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+.footer-col a:hover {
+    color: #9acd32; /* Yellowgreen activation feedback hover light up */
+}
+
+/* Icon Link Layout Structure */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+.social-icon {
+    margin-right: 10px;
+    font-size: 1.1rem;
+    display: inline-block;
+    width: 20px;
+    text-align: center;
+}
+
+/* Bottom Legal Content Separator Row */
+.footer-bottom-bar {
+    text-align: center;
+    border-top: 1px solid #2e3035;
+    padding-top: 25px;
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: #6c727f;
+}
+
+.footer-bottom-bar a {
+    color: #9acd32;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.footer-bottom-bar a:hover {
+    text-decoration: underline;
+}

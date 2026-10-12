@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Major+Mono+Display&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+    --black: #050505;
+    --dark: #151619;
+    --panel: #1b1c20;
+    --green: yellowgreen;
+    --orange: orange;
+    --white: #f5f5f5;
+    --muted: #a5a8af;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--black); color: var(--white); font-family: Arial, sans-serif; line-height: 1.65; overflow-x: hidden; }
+a { text-decoration: none; }
+img { display: block; max-width: 100%; }
+button { font: inherit; }
+
+/* Header and navigation match the homepage's green/orange branding. */
+.site-header { position: relative; z-index: 10; background: #070c0d; border-bottom: 1px solid #242424; }
+.navbar { max-width: 1500px; min-height: 105px; margin: auto; padding: 16px 4%; display: flex; align-items: center; justify-content: space-between; gap: 25px; }
+.brand { display: flex; align-items: center; gap: 18px; color: var(--green); font-family: 'Major Mono Display', monospace; font-size: clamp(22px, 3vw, 38px); white-space: nowrap; }
+.brand-logo { width: 78px; height: 78px; object-fit: cover; border-radius: 50%; }
+.nav-links { display: flex; align-items: center; flex-wrap: wrap; justify-content: center; gap: 22px; list-style: none; }
+.nav-links a { color: var(--orange); font-family: Orbitron, sans-serif; font-size: clamp(12px, 1.2vw, 18px); font-weight: 800; transition: color .2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--green); }
+.menu-toggle { display: none; color: var(--green); background: transparent; border: 1px solid #3d3d3d; padding: 6px 12px; font-size: 24px; }
+
+/* Hero */
+.about-hero { min-height: 510px; padding: 80px 8%; position: relative; isolation: isolate; display: flex; align-items: center; justify-content: space-between; gap: 25px; overflow: hidden; background: #080a0a url("Images/cover-img1.jpg") center 42% / cover no-repeat; }
+.hero-shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(0,0,0,.95) 0%, rgba(0,0,0,.77) 48%, rgba(0,0,0,.35) 100%); }
+.hero-copy { max-width: 780px; }
+.eyebrow { color: var(--green); font-size: 12px; font-weight: 800; letter-spacing: 3px; margin-bottom: 15px; }
+.about-hero h1 { font-family: 'Black Ops One', sans-serif; font-size: clamp(46px, 7vw, 88px); line-height: 1.08; letter-spacing: 1px; }
+.about-hero h1 span, .intro-copy h2 span, .section-heading h2 span, .values-copy h2 span, .cta-section h2 span { color: var(--green); }
+.hero-copy > p:not(.eyebrow) { max-width: 590px; margin: 22px 0 28px; color: #ddd; font-size: 18px; }
+.hero-mark { display: flex; align-items: center; gap: 14px; border-left: 3px solid var(--orange); padding: 15px 0 15px 22px; font-family: Orbitron, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+.hero-mark span { color: var(--green); font-family: 'Black Ops One', sans-serif; font-size: 50px; }
+
+/* Shared buttons */
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 18px; padding: 13px 22px; font-size: 12px; font-weight: 900; letter-spacing: 1px; transition: .25s; }
+.button-green { color: #080808; background: var(--green); border: 2px solid var(--green); }
+.button-green:hover { color: var(--green); background: transparent; transform: translateY(-2px); }
+.button-outline { color: var(--green); background: transparent; border: 2px solid var(--green); }
+.button-outline:hover { color: #080808; background: var(--green); transform: translateY(-2px); }
+
+/* Intro */
+.intro-section { max-width: 1350px; margin: auto; padding: 95px 6%; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 65px; }
+.intro-image { position: relative; min-height: 390px; }
+.intro-image img { width: 100%; height: 390px; object-fit: cover; filter: saturate(.82); }
+.intro-image::after { content: ""; position: absolute; inset: 16px -16px -16px 16px; border: 2px solid var(--green); z-index: -1; }
+.image-label { position: absolute; left: 0; bottom: 0; background: var(--green); color: #080808; padding: 12px 17px; font-family: Orbitron, sans-serif; font-size: 11px; font-weight: 900; letter-spacing: 1px; }
+.image-label span { margin-right: 12px; }
+.intro-copy h2, .section-heading h2, .values-copy h2, .cta-section h2 { font-family: 'Black Ops One', sans-serif; font-size: clamp(30px, 4vw, 48px); line-height: 1.2; }
+.intro-copy p:not(.eyebrow) { color: #bfc0c4; margin-top: 16px; font-size: 15px; }
+.intro-copy .lead { color: white !important; font-size: 19px !important; line-height: 1.6; }
+.text-link { display: inline-flex; gap: 15px; margin-top: 25px; color: var(--orange); font-family: Orbitron, sans-serif; font-size: 12px; font-weight: 800; }
+.text-link:hover { color: var(--green); }
+
+/* Mission cards */
+.mission-section { background: #101010; padding: 85px 5%; border-top: 1px solid #222; border-bottom: 1px solid #222; }
+.section-heading { max-width: 850px; margin: 0 auto 40px; text-align: center; }
+.section-heading > p:last-child { margin-top: 12px; color: var(--muted); }
+.mission-grid { max-width: 1250px; margin: auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.mission-card { position: relative; min-height: 270px; padding: 30px 27px; background: #191a1d; border: 1px solid #333; transition: transform .25s, border-color .25s; }
+.mission-card:hover { transform: translateY(-6px); border-color: var(--green); }
+.mission-card.featured { border-color: var(--green); box-shadow: 0 0 22px rgba(154,205,50,.12); }
+.card-number { position: absolute; top: 17px; right: 20px; color: #4b4d4f; font-family: 'Major Mono Display', monospace; font-size: 25px; }
+.card-icon { width: 48px; height: 48px; display: grid; place-items: center; color: #111; background: var(--green); font-size: 28px; margin-bottom: 24px; }
+.mission-card h3 { font-family: Orbitron, sans-serif; font-size: 17px; margin-bottom: 12px; }
+.mission-card p { color: #afb1b6; font-size: 14px; }
+
+/* Values section */
+.values-section { max-width: 1350px; margin: auto; padding: 95px 6%; display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+.values-copy > p:not(.eyebrow) { color: #b9bbc1; margin: 20px 0; max-width: 600px; }
+.value-list { list-style: none; margin: 25px 0 30px; }
+.value-list li { margin: 12px 0; color: #ddd; }
+.value-list li span { color: var(--green); font-weight: 900; margin-right: 12px; }
+.values-visual { position: relative; min-height: 430px; }
+.values-visual > img { width: 100%; height: 430px; object-fit: cover; filter: brightness(.7); }
+.vertical-tag { position: absolute; top: 0; right: 0; padding: 12px 15px; color: #111; background: var(--orange); font-family: Orbitron, sans-serif; font-size: 10px; font-weight: 900; writing-mode: vertical-rl; }
+.visual-box { position: absolute; left: -25px; bottom: 25px; padding: 20px 25px; display: flex; flex-direction: column; background: var(--green); color: #080808; font-family: 'Black Ops One', sans-serif; font-size: clamp(28px, 4vw, 43px); line-height: 1.1; box-shadow: 0 8px 28px rgba(0,0,0,.35); }
+.visual-box span { color: white; }
+
+/* CTA */
+.cta-section { padding: 75px 5%; text-align: center; background: linear-gradient(120deg, #111, #1a260e); border-top: 1px solid #34451d; }
+.cta-section > p:not(.eyebrow) { color: #c4c4c4; margin: 16px 0 26px; }
+.cta-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 13px; }
+
+/* Footer */
+.main-footer { background: #17181c; padding: 50px 5% 25px; }
+.footer-container { max-width: 1250px; margin: auto; }
+.footer-brand-block { text-align: center; padding-bottom: 32px; border-bottom: 1px solid #303136; }
+.footer-logo { width: 95px; height: 95px; object-fit: contain; margin: 0 auto 10px; }
+.footer-brand-block h2 { font-family: 'Black Ops One', sans-serif; font-size: 30px; }
+.footer-brand-block h2 span { color: var(--green); }
+.footer-brand-block p { margin-top: 4px; color: #a6a8af; font-family: Orbitron, sans-serif; font-size: 10px; letter-spacing: 2px; }
+.footer-columns { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 30px; padding: 35px 0; }
+.footer-col h3 { font-size: 15px; margin-bottom: 15px; letter-spacing: 1px; }
+.footer-col p, .footer-col a { display: block; color: #a6a8af; font-size: 14px; margin-bottom: 9px; }
+.footer-col a:hover { color: var(--green); }
+.footer-bottom { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; border-top: 1px solid #303136; padding-top: 20px; color: #858994; font-size: 12px; }
+.footer-bottom a { color: var(--green); font-weight: 700; }
+
+/* Responsive */
+@media (max-width: 1050px) {
+    .navbar { flex-wrap: wrap; }
+    .nav-links { gap: 14px; }
+    .intro-section, .values-section { gap: 40px; }
+    .hero-mark { display: none; }
+}
+@media (max-width: 760px) {
+    .navbar { min-height: 80px; padding: 12px 5%; }
+    .brand { font-size: 22px; gap: 10px; }
+    .brand-logo { width: 55px; height: 55px; }
+    .menu-toggle { display: block; }
+    .nav-links { display: none; width: 100%; flex-direction: column; align-items: flex-start; padding: 12px 0 8px; }
+    .nav-links.open { display: flex; }
+    .nav-links a { font-size: 14px; }
+    .about-hero { min-height: 430px; padding: 55px 6%; background-position: 58% center; }
+    .about-hero h1 { font-size: clamp(42px, 11vw, 65px); }
+    .hero-copy > p:not(.eyebrow) { font-size: 16px; }
+    .intro-section, .values-section { grid-template-columns: 1fr; padding: 65px 6%; gap: 40px; }
+    .intro-image, .intro-image img { min-height: 290px; height: 290px; }
+    .mission-section { padding: 65px 6%; }
+    .mission-grid { grid-template-columns: 1fr; }
+    .mission-card { min-height: auto; }
+    .values-visual, .values-visual > img { min-height: 310px; height: 310px; }
+    .visual-box { left: -8px; bottom: 15px; font-size: 31px; }
+    .footer-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 25px 18px; }
+}
+@media (max-width: 430px) {
+    .brand { font-size: 18px; }
+    .about-hero { min-height: 390px; }
+    .footer-columns { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; }
+    .button { width: 100%; }
+}

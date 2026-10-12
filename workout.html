@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Workouts | MusclePedia</title>
+    <link rel="stylesheet" href="workout.css">
+    <script src="workout.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navbar">
+            <a class="brand" href="index.html">
+                <img src="Images/Gym_logo_2.jpg" alt="MusclePedia logo" class="logo">
+                <span>MUSCLEPEDIA</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="workout.html">Workouts</a></li>
+                <li><a href="dietplan.html">Diet Plans</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <p class="eyebrow">YOUR FITNESS. YOUR JOURNEY.</p>
+                <h1>TRAIN SMART.<br><span>GET STRONGER.</span></h1>
+                <p class="hero-description">Explore exercises, target specific muscle groups and build a workout routine that works for you.</p>
+                <a href="#workout-library" class="primary-btn">EXPLORE WORKOUTS ↓</a>
+            </div>
+            <div class="hero-stamp"><span>01</span><p>STRENGTH<br>STARTS HERE</p></div>
+        </section>
+
+        <section class="stats" aria-label="Workout statistics">
+            <div class="stat"><h2 id="total-count">12</h2><p>EXERCISES</p></div>
+            <div class="stat"><h2>06</h2><p>MUSCLE GROUPS</p></div>
+            <div class="stat"><h2 id="saved-count">0</h2><p>SAVED WORKOUTS</p></div>
+        </section>
+
+        <section class="workout-section" id="workout-library">
+            <div class="section-heading">
+                <p class="eyebrow">FIND YOUR NEXT CHALLENGE</p>
+                <h2>THE WORKOUT <span>LIBRARY</span></h2>
+                <p>Choose a muscle group and discover your next exercise.</p>
+            </div>
+
+            <div class="controls">
+                <div class="field search-field">
+                    <label for="search-input">Search exercises</label>
+                    <input type="search" id="search-input" placeholder="Search by exercise, muscle or equipment...">
+                </div>
+                <div class="field">
+                    <label for="category-filter">Muscle group</label>
+                    <select id="category-filter">
+                        <option value="All">All Workouts</option>
+                        <option value="Chest">Chest</option>
+                        <option value="Back">Back</option>
+                        <option value="Shoulders">Shoulders</option>
+                        <option value="Arms">Arms</option>
+                        <option value="Legs">Legs</option>
+                        <option value="Abs">Abs</option>
+                    </select>
+                </div>
+                <button id="saved-filter" class="saved-filter" type="button" aria-pressed="false">♡ SAVED ONLY</button>
+            </div>
+
+            <div class="category-list" aria-label="Filter by muscle group">
+                <button class="category-btn active" data-category="All" type="button">All</button>
+                <button class="category-btn" data-category="Chest" type="button">Chest</button>
+                <button class="category-btn" data-category="Back" type="button">Back</button>
+                <button class="category-btn" data-category="Shoulders" type="button">Shoulders</button>
+                <button class="category-btn" data-category="Arms" type="button">Arms</button>
+                <button class="category-btn" data-category="Legs" type="button">Legs</button>
+                <button class="category-btn" data-category="Abs" type="button">Abs</button>
+            </div>
+
+            <p class="results-line" id="results-line" aria-live="polite"></p>
+            <div id="workout-grid" class="workout-grid"></div>
+            <p id="empty-message" class="empty-message" hidden>No workouts found. Try another search or category.</p>
+        </section>
+
+        <section class="motivation">
+            <p class="eyebrow">NO SHORTCUTS. JUST PROGRESS.</p>
+            <h2>YOUR ONLY COMPETITION IS <span>YOU.</span></h2>
+            <p>Stay consistent, focus on your form and keep moving forward.</p>
+            <a href="#workout-library" class="primary-btn">FIND YOUR WORKOUT</a>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-logo-row">
+                <img src="Images/Gym_logo_2.jpg" alt="MusclePedia logo" class="footer-logo">
+                <h2 class="footer-brand-title">MUSCLE<span class="accent-text">PEDIA</span></h2>
+            </div>
+            <div class="footer-columns-grid">
+                <div class="footer-col">
+                    <h4>BRAND INFO</h4>
+                    <p>Transformation is a process of physical evolution and elite training, designed to help you reach your fitness goals.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>QUICK LINKS</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="workout.html">Gym Workouts</a></li>
+                        <li><a href="diet-plans.html">Diet Plans</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>CONTACT US</h4>
+                    <ul>
+                        <li>Email: info@musclepedia.com</li>
+                        <li>Gym Hours: Mon-Sat (6am - 10pm)</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>FOLLOW US</h4>
+                    <div class="social-links"><a href="#">📷 Instagram</a><a href="#">📺 YouTube</a><a href="#">✖ X</a></div>
+                </div>
+            </div>
+            <div class="footer-bottom-bar"><p>© 2026 MusclePedia. All Rights Reserved.</p></div>
+        </div>
+    </footer>
+</body>
+</html>

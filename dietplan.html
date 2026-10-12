@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Plan your nutrition and track your fitness goals with MusclePedia.">
+    <title>Diet Plans | MusclePedia</title>
+    <link rel="stylesheet" href="dietplan.css">
+    <script src="dietplan.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Major+Mono+Display&family=Orbitron:wght@400;500;600;700;800;900&family=Rubik+Microbe&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HEADER / NAV -->
+    <header class="site-header">
+        <nav class="navbar container" aria-label="Main navigation">
+            <a class="logo" href="#home">MUSCLE<span>PEDIA.</span></a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="about.html">About us</a>
+                <a href="workout.html">Workouts</a>
+                <a href="dietplan.html">Diet Plans</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="#manage" class="nav-cta">CREATE YOUR PLAN ↗</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero container" id="home">
+            <div class="hero-content">
+                <span class="eyebrow"><span class="dot"></span> YOUR FITNESS. YOUR FUEL.</span>
+                <h1>FUEL YOUR<br> <span>AMBITION.</span></h1>
+                <p>Train hard. Eat smart. Build a nutrition routine that supports your fitness goals, one meal at a time.</p>
+                <div class="hero-actions">
+                    <a href="#plans" class="btn btn-primary">EXPLORE PLANS ↘</a>
+                    <a href="#manage" class="btn btn-outline">+ CREATE A PLAN</a>
+                </div>
+                <div class="hero-stats">
+                    <div><strong id="totalCount">7</strong><span>STARTER PLANS</span></div>
+                    <div><strong id="completedCount">0</strong><span>PLANS COMPLETED</span></div>
+                    <div><strong>100%</strong><span>YOUR JOURNEY</span></div>
+                </div>
+            </div>
+            <div class="hero-art" aria-label="Nutrition and fitness illustration">
+                <div class="art-ring"></div>
+                <div class="art-content">
+                    <span class="art-icon">✳</span>
+                    <span class="art-label">DISCIPLINE OVER EXCUSES</span>
+                    <strong>EAT.<br>TRAIN.<br><span>REPEAT.</span></strong>
+                    <span class="art-bottom">STRONGER EVERY DAY / 001</span>
+                </div>
+                <span class="art-tag">FUEL YOUR GOALS ↗</span>
+            </div>
+        </section>
+
+        <!-- DIET PLANS SECTION -->
+        <section class="plans-section section-pad" id="plans">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <span class="eyebrow">NUTRITION / 01</span>
+                        <h2>FIND YOUR <span>FUEL.</span></h2>
+                        <p>Choose your goal. Discover your plan. Make it happen.</p>
+                    </div>
+                    <span class="section-number">01 — 03</span>
+                </div>
+
+                <!-- Search and Filters -->
+                <div class="toolbar">
+                    <div class="search-wrap">
+                        <label for="searchInput" class="sr-only">Search diet plans</label>
+                        <input id="searchInput" type="search" placeholder="Search plans..." autocomplete="off">
+                    </div>
+                    <div class="filters" id="goalFilters" aria-label="Filter by diet goal">
+                        <button class="filter-btn active" data-goal="All">ALL PLANS</button>
+                        <button class="filter-btn" data-goal="Weight Loss">WEIGHT LOSS</button>
+                        <button class="filter-btn" data-goal="Muscle Gain">MUSCLE GAIN</button>
+                        <button class="filter-btn" data-goal="Maintenance">MAINTENANCE</button>
+                        <button class="filter-btn" data-goal="High Protein">HIGH PROTEIN</button>
+                        <button class="filter-btn" data-goal="Vegetarian">VEGETARIAN</button>
+                        <button class="filter-btn" data-goal="Vegan">VEGAN</button>
+                        <button class="filter-btn" data-goal="Balanced Diet">BALANCED</button>
+                    </div>
+                </div>
+
+                <!-- Status Tabs -->
+                <div class="status-tabs" aria-label="Filter by completion status">
+                    <button class="status-btn active" data-status="all">ALL <span id="allCount">7</span></button>
+                    <button class="status-btn" data-status="active">IN PROGRESS</button>
+                    <button class="status-btn" data-status="completed">COMPLETED <span id="doneCount">0</span></button>
+                </div>
+
+                <div class="results-line">
+                    <span id="resultsCount" aria-live="polite">7 plans found</span>
+                    <span>YOUR GOALS. YOUR RULES.</span>
+                </div>
+
+                <!-- Plan Cards Grid -->
+                <div class="plans-grid" id="plansGrid" aria-live="polite"></div>
+                <div class="empty-state" id="emptyState" hidden>
+                    <span>✳</span>
+                    <h3>NO PLANS FOUND</h3>
+                    <p>Try another search or create a new nutrition plan.</p>
+                    <button class="btn btn-primary" id="resetFilters">RESET FILTERS</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- BMI CALCULATOR SECTION -->
+        <section class="bmi-section section-pad" id="bmi">
+            <div class="container bmi-layout">
+                <div>
+                    <span class="eyebrow">KNOW YOUR STARTING POINT / 02</span>
+                    <h2>NUMBERS ARE<br><span>JUST A START.</span></h2>
+                    <p>Calculate your Body Mass Index (BMI) as a general screening measure. It does not measure body fat directly or determine your individual nutritional needs.</p>
+                    <div class="bmi-note">
+                        <span>!</span>
+                        BMI is intended for adults. It is not a diagnosis or a personalized diet recommendation.
+                    </div>
+                </div>
+                <form id="bmiForm" class="bmi-card">
+                    <h3>BMI CALCULATOR <span>↗</span></h3>
+                    <div class="form-group">
+                        <label for="height">HEIGHT (CM)</label>
+                        <input type="number" id="height" min="100" max="250" step="0.1" placeholder="e.g. 175" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="weight">WEIGHT (KG)</label>
+                        <input type="number" id="weight" min="25" max="350" step="0.1" placeholder="e.g. 72" required>
+                    </div>
+                    <button class="btn btn-primary full-btn" type="submit">CALCULATE BMI ↗</button>
+                    <div id="bmiResult" class="bmi-result" aria-live="polite" hidden></div>
+                </form>
+            </div>
+        </section>
+
+        <!-- CREATE PLAN SECTION -->
+        <section class="manage-section section-pad" id="manage">
+            <div class="container manage-layout">
+                <div class="manage-intro">
+                    <span class="eyebrow">TAKE CONTROL / 03</span>
+                    <h2>YOUR PLAN.<br><span>YOUR POWER.</span></h2>
+                    <p>Build your own plan, set your targets, and track your progress. Your plans are saved locally in this browser.</p>
+                    <div class="mini-feature"><span>01</span> Set your fitness goal</div>
+                    <div class="mini-feature"><span>02</span> Choose your nutrition style</div>
+                    <div class="mini-feature"><span>03</span> Track your consistency</div>
+                </div>
+
+                <form id="planForm" class="plan-form">
+                    <div class="form-title">
+                        <div>
+                            <span class="eyebrow">PLAN BUILDER</span>
+                            <h3>CREATE A DIET PLAN <span>+</span></h3>
+                        </div>
+                        <span class="required-note">* REQUIRED</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="planName">PLAN NAME *</label>
+                        <input type="text" id="planName" name="planName" placeholder="e.g. My Strength Journey"
+                            minlength="3" maxlength="50" pattern="[A-Za-z0-9][A-Za-z0-9 &'-]{2,49}"
+                            title="Use 3–50 letters, numbers, spaces, hyphens or apostrophes." required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="goal">FITNESS GOAL *</label>
+                            <select id="goal" name="goal" required>
+                                <option value="">Select a goal</option>
+                                <option>Weight Loss</option>
+                                <option>Muscle Gain</option>
+                                <option>Maintenance</option>
+                                <option>High Protein</option>
+                                <option>Vegetarian</option>
+                                <option>Vegan</option>
+                                <option>Balanced Diet</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="dietType">DIET TYPE *</label>
+                            <select id="dietType" name="dietType" required>
+                                <option value="">Select diet type</option>
+                                <option>Non-Vegetarian</option>
+                                <option>Vegetarian</option>
+                                <option>Vegan</option>
+                                <option>Eggetarian</option>
+                                <option>Flexible</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="calories">DAILY CALORIES (KCAL) *</label>
+                            <input type="number" id="calories" name="calories" min="800" max="6000" step="50"
+                                placeholder="e.g. 2200" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="duration">DURATION (DAYS) *</label>
+                            <input type="number" id="duration" name="duration" min="1" max="365" step="1"
+                                placeholder="e.g. 30" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">YOUR MEAL NOTES</label>
+                        <textarea id="description" name="description" rows="3" maxlength="240"
+                            placeholder="Meal ideas, preferences or reminders..."></textarea>
+                    </div>
+
+                    <button class="btn btn-primary full-btn" type="submit">SAVE MY PLAN ↗</button>
+                    <p class="form-feedback" id="formFeedback" aria-live="polite"></p>
+                    <p class="form-footnote">Plans are stored on this device. Nutrition values are estimates, not individualized medical advice.</p>
+                </form>
+            </div>
+        </section>
+
+        <!-- FINAL CTA SECTION -->
+        <section class="final-cta">
+            <div class="container">
+                <span class="eyebrow">THE NEXT REP STARTS HERE</span>
+                <h2>SHOW UP. <span>LEVEL UP.</span></h2>
+                <a href="#plans" class="btn btn-primary">FIND YOUR PLAN ↗</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <a class="logo" href="#home">MUSCLE<span>PEDIA.</span></a>
+            <p>BUILD STRENGTH. LIVE BETTER.</p>
+            <p>© <span id="year"></span> MusclePedia. All rights reserved.</p>
+        </div>
+        <div class="container disclaimer">
+            Educational content only. Calorie needs vary by individual.
+            Consult a qualified healthcare professional or registered dietitian for personalized nutrition advice.
+        </div>
+    </footer>
+
+</body>
+
+</html>
